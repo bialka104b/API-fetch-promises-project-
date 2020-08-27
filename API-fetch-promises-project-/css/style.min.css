@@ -1,1 +1,65 @@
-/* No CSS *//*# sourceMappingURL=style.min.css.map */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featured-dog {
+  padding: 15px;
+  border: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.featured-dog .featured-dog__wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 400px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.featured-dog .featured-dog__wrapper .featured-dog__background,
+.featured-dog .featured-dog__wrapper #back {
+  position: absolute;
+  padding: 15px;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  width: 110%;
+  height: 110%;
+  background-size: cover;
+  margin: -5%;
+}
+
+.featured-dog .featured-dog__wrapper .featured-dog__image {
+  position: relative;
+  z-index: 2;
+}
+
+.featured-dog .featured-dog__wrapper .featured-dog__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100%;
+  width: 100%;
+}
+
+.featured-dog .featured-dog__description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 15px;
+}
+/*# sourceMappingURL=style.min.css.map */
