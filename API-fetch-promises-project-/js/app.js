@@ -1,20 +1,12 @@
-const MyPromise = doSomeWork();
-
-MyPromise.then((information) => {
-  //kiedy nasz promis zostanie spełniony to kod wewnątrz się uruchomi
-  //information to dane wejściowe pobierane z funkcji sleep() doSomeWork() lub innej
-  console.log("Gotowe", information);
-  return sleep(1000); //yo nam wywoła kolejny then
-})
-  .then(() => {
-    console.log("nawet wyspany");
-    return sleep(500);
+fetch("https://www.googleapis.com/books/v1/volumes?q=quilting")
+  .then((response) => {
+    //return response.text(); //metoda do odkodowania naszego responsa, zwraca ona kolejnego
+    return response.json(); //metoda podobna do text z tym że rozkodowuje nam jeszcze jsona do obiektu JS
   })
-  .then(() => {
-    return console.log("fejk");
+  .then((booksInfo) => {
+    console.log(booksInfo);
+    //wszystko tutaj zostanie zwrócone jako json dzięki metodzie response.text()
   })
-  .catch((err) => {
-    //funkcja catch zostanie uruchomiona jeśli jakikolwiek promise będzie odrzucony
-    console.log("Błąd: ", err);
+  .catch((error) => {
+    console.log("Niestety masz błąd: ", error);
   });
-//console.log(MyPromise);
