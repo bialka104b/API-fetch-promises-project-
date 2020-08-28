@@ -1,0 +1,41 @@
+@import "./variables";
+.featured-dog {
+  padding: $main-spacing;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-wrap: wrap;
+
+  .featured-dog__wrapper {
+    flex: 1;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .featured-dog__background,
+    #back {
+      position: absolute;
+      padding: $main-spacing;
+      filter: blur(50px);
+      width: 110%;
+      height: 110%;
+      background-size: cover;
+      margin: -5%;
+    }
+    .featured-dog__image {
+      position: relative;
+      z-index: 2;
+      img {
+        object-fit: cover;
+        max-height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .featured-dog__description {
+    flex: 1;
+    padding: 0 $main-spacing;
+  }
+}
